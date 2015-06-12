@@ -1,2 +1,9 @@
-
-<%= link_to 'My Blog', controller: 'posts' %>
+<div ng-controller="PostsCtrl">
+  <div id="post-list-container">
+    <ul>
+      <li ng-repeat="post in posts">
+        <h3>{{post.title}} <small>({{post.text}})</small></h3>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
+  
+  scope :api do
+      get "/posts(.:format)" => "posts#index_json"
+      get "/posts/:id(.:format)" => "posts#show_json"
+    end
     
   root to: 'posts#index'
 end

@@ -44,6 +44,19 @@ class PostsController < ApplicationController
     redirect_to posts_path
   end
   
+  # GET /screencasts
+    # GET /screencasts.json
+    def index_json
+      render json: Post.all
+    end
+
+    # GET /screencasts/:id
+    # GET /screencasts/:id.json
+    def show_json
+      render json: Post.find(params[:id])
+    end
+    
+  
   private
     def post_params
       params.require(:post).permit(:title, :text)
