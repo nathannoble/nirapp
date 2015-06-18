@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Comment.delete_all
+Post.delete_all
+
+post = Post.create(
+  {title: 'iPhone 5', text:'slightly used. in good condition.', price:12000.50}
+)
+
+Comment.create({commenter: 'Nathan', body:'This is an awesome phone', post_id:post.id})
