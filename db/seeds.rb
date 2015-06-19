@@ -14,3 +14,12 @@ post = Post.create(
 )
 
 Comment.create({commenter: 'Nathan', body:'This is an awesome phone', post_id:post.id})
+post.comments.create(commenter: 'Judith', body:'This is also an awesome phone')
+
+Post.create(
+  {title: 'iPhone 6', text:'slightly used. in good condition.', price:12000.50}
+).comments.create(commenter: 'Mike', body:'This is also an awesome phone')
+
+ost.create(
+  {title: 'iPhone 7', text:'slightly used. in good condition.', price:12000.50}
+).comments.create(commenter: 'Mike', body:'This is also an awesome phone')
