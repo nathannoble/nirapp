@@ -1,0 +1,9 @@
+<%= form_for([@post, @post.images.build]) do |f| %>
+  
+  <p>
+	  <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

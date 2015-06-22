@@ -27,6 +27,10 @@ gem 'devise', '~> 3.5.1'
 
 gem 'bootstrap-sass', '~> 3.2.0'
 
+gem 'carrierwave'
+
+gem 'rmagick'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

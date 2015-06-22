@@ -1,0 +1,10 @@
+
+<p>
+  <%= image_tag(image.image_url(:thumb)) if image.image.present? %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Image', [image.post, image],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
