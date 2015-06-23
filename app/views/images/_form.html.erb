@@ -1,4 +1,4 @@
-<%= form_for([@post, @post.images.build]) do |f| %>
+<%= form_for([@post, @post.images.build], :html => {:multipart => true}) do |f|%>
   
   <p>
 	  <%= f.file_field :image %>

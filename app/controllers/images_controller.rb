@@ -2,7 +2,7 @@ class ImagesController < ApplicationController
   
   def create
       @post = Post.find(params[:post_id])
-      @comment = @post.images.create(image_params)
+      @image = @post.images.create(image_params)
       
       redirect_to post_path(@post)
     end
