@@ -13,4 +13,4 @@
 /tmp
 
 /public/uploads/image
-/config/application.yml
+/config/*.yml
