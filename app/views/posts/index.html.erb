@@ -31,7 +31,13 @@
 <% @posts.each do |post| %>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <%= image_tag(post.images[0].image_url(:mini)) if post.images[0].image.present? %>
+                            <%=  if (post.images[0].present? && post.images[0].image.present?) 
+							image_tag(post.images[0].image_url(:mini))
+						else
+							image_tag("/uploads/image/image/29/mini_cute.jpeg")
+						end
+							
+							%>
                             <div class="caption">
                                 <h4 class="pull-right">$24.99</h4>
                                 <h4><a href="#"><%= post.title %></a>

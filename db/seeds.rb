@@ -6,20 +6,32 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Comment.delete_all
-Post.delete_all
+#Comment.delete_all
+#Post.delete_all
 
-post = Post.create(
-  {title: 'iPhone 5', text:'slightly used. in good condition.', price:12000.50}
-)
+#post = Post.create(
+#  {title: 'iPhone 5', text:'slightly used. in good condition.', price:12000.50}
+#)
 
-Comment.create({commenter: 'Nathan', body:'This is an awesome phone', post_id:post.id})
-post.comments.create(commenter: 'Judith', body:'This is also an awesome phone')
+#Comment.create({commenter: 'Nathan', body:'This is an awesome phone', post_id:post.id})
+#post.comments.create(commenter: 'Judith', body:'This is also an awesome phone')
 
-Post.create(
-  {title: 'iPhone 6', text:'slightly used. in good condition.', price:12000.50}
-).comments.create(commenter: 'Mike', body:'This is also an awesome phone')
+#Post.create(
+#  {title: 'iPhone 6', text:'slightly used. in good condition.', price:12000.50}
+#).comments.create(commenter: 'Mike', body:'This is also an awesome phone')
 
-ost.create(
-  {title: 'iPhone 7', text:'slightly used. in good condition.', price:12000.50}
-).comments.create(commenter: 'Mike', body:'This is also an awesome phone')
+#Post.create(
+#  {title: 'iPhone 7', text:'slightly used. in good condition.', price:12000.50}
+#).comments.create(commenter: 'Mike', body:'This is also an awesome phone')
+
+
+require "csv"
+CSV.foreach("/Users/nathan/Desktop/juices.csv") do |row|
+  title, price, text = row[0].split("\t")
+  puts price
+  
+  Post.create(
+    {title: title, text:text, price:price}
+  ).comments.create(commenter: text, body:title)
+end
+
