@@ -13,4 +13,6 @@
 /tmp
 
 /public/uploads/image
-/config/*.yml
+config/application.yml
+config/secrets.yml
+config/.DS_Store
