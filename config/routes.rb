@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   end
   
   scope :api do
-      get "/posts(.:format)" => "posts#index_json"
-      get "/posts/:id(.:format)" => "posts#show_json"
-    end
+    get "/posts(.:format)" => "posts#index_json"
+    get "/posts/:id(.:format)" => "posts#show_json"
+  end
+  
+  get 'search', to: 'search#search'
     
   root to: 'posts#index'
 end
