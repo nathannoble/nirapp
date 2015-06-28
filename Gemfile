@@ -33,11 +33,7 @@ gem 'rmagick'
 
 gem 'fog'
 
-gem 'CFPropertyList'
-
-gem 'elasticsearch-model'
-
-gem 'elasticsearch-rails'
+gem 'searchkick'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
