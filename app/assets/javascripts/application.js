@@ -17,4 +17,11 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+	
+	$(function () {  
+	    $('body').on("click", '.pagination a', function () {  
+	        $.get(this.href, null, null, 'script');  
+	        return false;  
+	    });  
+	});
 

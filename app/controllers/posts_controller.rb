@@ -2,7 +2,12 @@ class PostsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @posts = Post.search "*"
+    @posts = Post.search "*", page: params[:page], per_page: Rails.application.config.page_size
+    
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
   
   def show
