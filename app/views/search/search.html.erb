@@ -1,15 +1,7 @@
-<h1>Search</h1>
- 
-<%= form_for search_path, method: :get do |f| %>
-  <p>
-    <%= f.label "Search for" %>
-    <%= text_field_tag :q, params[:q] %>
-    <%= submit_tag "Go", name: nil %>
-  </p>
-<% end %>
- 
+<h1><%= @posts.count %> found</h1>
+
 <ul>
-  <% @posts.each do |post| %>
+  <% @posts.results.each do |post| %>
     <li>
       <h3>
         <%= link_to post.try(:highlight).try(:title) ? post.highlight.title[0].html_safe : post.title,

@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     if params[:q].nil?
       @posts = []
     else
-      @posts = Post.search params[:q]
+      @posts = Post.search(params[:q])
     end
   end
 
