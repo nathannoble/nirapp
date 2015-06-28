@@ -4,7 +4,7 @@ class SearchController < ApplicationController
     if params[:q].nil?
       @posts = []
     else
-      @posts = Post.search params[:q], fields: [:title], highlight: true
+      @posts = Post.search params[:q], fields: [:title, :text], highlight: true
     end
     
     respond_to do |format|

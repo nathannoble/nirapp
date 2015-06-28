@@ -11,12 +11,12 @@
 							%>
                             <div class="caption">
                                 <h4 class="pull-right">$24.99</h4>
-                                <h4><a href="#"><%= link_to details.empty? ? post.title : details[:highlight][:title].html_safe ,
+                                <h4><a href="#"><%= link_to details.empty? || details[:highlight][:title].nil? ? post.title : details[:highlight][:title].html_safe ,
           controller: "posts",
           action: "show",
           id: post.id%></a>
                                 </h4>
-                                <p><%= post.text %></p>
+                                <p><%= details.empty? || details[:highlight][:text].nil? ? post.text : details[:highlight][:text].html_safe %></p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right"><%= post.comments.count %> comments</p>

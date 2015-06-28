@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  searchkick highlight: [:title]
+  searchkick highlight: [:title, :text]
   
   has_many :images, dependent: :destroy
   has_many :comments, dependent: :destroy
